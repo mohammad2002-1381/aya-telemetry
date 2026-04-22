@@ -21,6 +21,6 @@ FROM scratch
 
 WORKDIR /
 
-COPY --from=builder /usr/src/app/target/x86_64-unknown-linux-musl/release/your_app_name /telemetry-app
+COPY --from=builder /usr/src/app/target/x86_64-unknown-linux-musl/release/aya-telemetry /telemetry-app
 
 CMD ["/telemetry-app"]
