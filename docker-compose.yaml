@@ -1,0 +1,18 @@
+services:
+  ebpf-telemetry:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ebpf-telemetry
+    
+    privileged: true
+    
+    pid: "host" 
+    
+    volumes:
+      - /sys/kernel/debug:/sys/kernel/debug:ro
+      - /sys/fs/bpf:/sys/fs/bpf:rw
+      
+      - /opt/protected:/opt/protected:rw
+      - /var/secure:/var/secure:rw
+      - /home/secure_area:/home/secure_area:rw
