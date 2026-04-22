@@ -17,7 +17,7 @@ This telemetry and enforcement tool monitors specific directories and applies ac
 1. (if cross-compiling) C toolchain: (e.g.) [`brew install filosottile/musl-cross/musl-cross`](https://github.com/FiloSottile/homebrew-musl-cross) (on macOS)
 1. bpf-linker: `cargo install bpf-linker` (`--no-default-features` on macOS)
 
-### Fast Run
+## Fast Run
 
 To quickly build the eBPF component and run the userspace application with sudo and info logging, use the following commands:
 
