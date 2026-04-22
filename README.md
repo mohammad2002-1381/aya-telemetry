@@ -29,6 +29,15 @@ cd aya-telemetry
 sudo RUST_LOG=info cargo run --release
 ```
 
+## Testing
+
+To run the unit tests for the userspace application, use the following commands:
+
+```shell
+cd aya-telemetry
+cargo test
+```
+
 ## Build & Run
 
 Use `cargo build`, `cargo check`, etc. as normal. Run your program with:
