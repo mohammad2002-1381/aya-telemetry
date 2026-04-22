@@ -38,14 +38,18 @@ cd aya-telemetry
 cargo test
 ```
 
-## Build & Run
+## Build & Run Static Rust Binary
 
 Use `cargo build`, `cargo check`, etc. as normal. Run your program with:
 ```shell
-cargo run --release
-
-Cargo build scripts are used to automatically build the eBPF correctly and include it in the
-program.
+rustup target add x86_64-unknown-linux-musl
+cd aya-telemetry-ebpf
+cargo +nightly build --target bpfel-unknown-none -Z build-std=core --release
+cd ..
+cd aya-telemetry
+cargo build --release --target x86_64-unknown-linux-musl
+cd ../target/x86_64-unknown-linux-musl/release
+sudo ./aya-telemetry
 ```
 ## Cross-compiling on macOS
 
