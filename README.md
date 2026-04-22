@@ -21,12 +21,13 @@ This telemetry and enforcement tool monitors specific directories and applies ac
 
 To quickly build the eBPF component and run the userspace application with sudo and info logging, use the following commands:
 
-shell
+```shell
 cd aya-telemetry-ebpf
 cargo +nightly build --target bpfel-unknown-none -Z build-std=core --release
 cd ..
 cd aya-telemetry
 sudo RUST_LOG=info cargo run --release
+```
 
 ## Build & Run
 
