@@ -37,17 +37,18 @@ cargo run --release
 
 Cargo build scripts are used to automatically build the eBPF correctly and include it in the
 program.
-
+```
 ## Cross-compiling on macOS
 
 Cross compilation should work on both Intel and Apple Silicon Macs.
 
-shell
+```shell
 CC=${ARCH}-linux-musl-gcc cargo build --package aya-telemetry --release \
   --target=${ARCH}-unknown-linux-musl \
   --config=target.${ARCH}-unknown-linux-musl.linker=\"${ARCH}-linux-musl-gcc\"
 The cross-compiled program `target/${ARCH}-unknown-linux-musl/release/aya-telemetry` can be
 copied to a Linux server or VM and run there.
+```
 
 ## License
 
